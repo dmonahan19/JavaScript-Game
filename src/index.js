@@ -10,7 +10,7 @@ var srcX;
 var srcY;
 
 var sheetWidth = 35
-var sheetHeight = 176
+var sheetHeight = 150
 
 var cols = 1;
 var rows = 4;
@@ -20,7 +20,7 @@ var frameCount = 1
 var width = sheetWidth / cols;
 var height = sheetHeight / rows;
 
-var currentFrame = 0
+var currentFrame = 4
 
 srcX = 0;
 srcY = currentFrame * height; 
@@ -83,6 +83,29 @@ function draw(){
     if (upPressed == false) {
         up = true;
     }
+    if (downPressed == true && down == true) {
+        y = y + 44;
+        down = false;
+    }
+    if (downPressed == false) {
+        down = true;
+    }
+
+    if (rightPressed == true && right == true) {
+        x = x + 44;
+        right = false;
+    }
+    if (rightPressed == false) {
+        right = true;
+    }
+    if (leftPressed == true && left == true) {
+        x = x - 44;
+        left = false;
+    }
+    if (leftPressed == false) {
+        left = true;
+    }
+
 
     requestAnimationFrame(draw)
 }
