@@ -1,0 +1,11 @@
+#canvas {
+  background-image:url(./cartoon-water-background-4.jpg);
+  background-size: cover;
+  /* z-index: 2;  */
+}
+
+.sprite {
+	background: url('imgs/penguin_sheet.png') no-repeat -443px -204px;
+	width: 122px;
+	height: 178px;
+}
