@@ -1,35 +1,4 @@
-// var canvas = document.getElementById('canvas')
-// var ctx = canvas.getContext('2d')
 
-// var penguin = new Image();
-// penguin.loaded = false;
-// penguin.onload = function () {
-//     this.loaded = true;
-// }
-// penguin.src = "assets/penguins.png"
-
-
-
-// function drawpenguin(){
-//     ctx.drawImage(penguin, sx, sy, swidth, sheight, dx, dy, dwidth, dheight)
-//     var sx = 0;
-//     var sy = 0;
-//     var swidth = 40;
-//     var sheight = 40;
-//     var dx = 50;
-//     var dy = 444;
-//     var dwidth = 30;
-//     var dheight = 30;
-
-// }
-
-// function draw(){
-//     drawpenguin();
-//     requestAnimationFrame(draw);
-
-// }
-
-// draw();
 
 var canWidth = 800;
 var canHeight = 500;
@@ -53,24 +22,27 @@ var height = sheetHeight / rows;
 
 var currentFrame = 0
 
+srcX = 0;
+srcY = currentFrame * height; 
+
 var canvas = document.getElementById('canvas');
 canvas.width = canWidth;
 canvas.height = canHeight;
 var ctx = canvas.getContext('2d')
 
-function updateFrame(){
-    // currentFrame = ++currentFrame % rows;
+// function updateFrame(){
+//     // currentFrame = ++currentFrame % rows;
 
-    srcX = 0;
-    srcY = currentFrame * height; 
+//     srcX = 0;
+//     srcY = currentFrame * height; 
 
-}
+// }
 
 var character = new Image();
 character.src = "assets/penguin.png"
 
 function drawImage(){
-    updateFrame();
+    // updateFrame();
     ctx.drawImage(character, srcX, srcY, width, height, x, y, width, height)
 }
 
@@ -79,7 +51,40 @@ let leftPressed = false;
 let upPressed = false;
 let downPressed = false;
 
+document.addEventListener("keydown", keyDownHandler, false)
+document.addEventListener("keyup", keyUpHandler, false )
 
-setInterval(function(){
-    drawImage();
-}, 1000);
+function keyDownHandler(e){
+    if (e.keyCode == 39) { rightPressed = true; }
+    if (e.keyCode == 37) { leftPressed = true; }
+    if (e.keyCode == 38) { upPressed = true; }
+    if (e.keyCode == 40) { downPressed = true; }
+}
+
+function keyUpHandler(e) {
+    if (e.keyCode == 39) { rightPressed = false; }
+    if (e.keyCode == 37) { leftPressed = false; }
+    if (e.keyCode == 38) { upPressed = false; }
+    if (e.keyCode == 40) { downPressed = false; }
+    let up = true
+    let down = true
+    let right = true
+    let left = true
+}
+
+function draw(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    drawImage()
+
+    if (upPressed==true && up==true){
+        y = y - 44;
+        up = false;
+    }
+    if (upPressed == false) {
+        up = true;
+    }
+
+    requestAnimationFrame(draw)
+}
+
+draw();
