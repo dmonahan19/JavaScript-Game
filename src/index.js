@@ -72,13 +72,11 @@ function keyUpHandler(e) {
     let left = true
 }
 
-function draw(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    drawImage()
-
-    if (upPressed==true && up==true){
+function movePenguin(){
+    if (upPressed == true && up == true) {
         y = y - 44;
         up = false;
+        srcY = 147;
     }
     if (upPressed == false) {
         up = true;
@@ -86,6 +84,7 @@ function draw(){
     if (downPressed == true && down == true) {
         y = y + 44;
         down = false;
+        srcY = 5;
     }
     if (downPressed == false) {
         down = true;
@@ -94,6 +93,7 @@ function draw(){
     if (rightPressed == true && right == true) {
         x = x + 44;
         right = false;
+        srcY = 101
     }
     if (rightPressed == false) {
         right = true;
@@ -101,13 +101,19 @@ function draw(){
     if (leftPressed == true && left == true) {
         x = x - 44;
         left = false;
+        srcY = 57
     }
     if (leftPressed == false) {
         left = true;
     }
 
+}
 
-    requestAnimationFrame(draw)
+function draw(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawImage();
+    movePenguin();
+    requestAnimationFrame(draw);
 }
 
 draw();
