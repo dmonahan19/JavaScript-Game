@@ -1,3 +1,4 @@
+// making the penguin and having it move
 let x = 300;
 let y = 230;
 
@@ -102,10 +103,13 @@ function movePenguin() {
 let dolphin = new Image();
 dolphin.src = "assets/dolphin.png"
 let dolphinX = 100;
+let dolphinY = 550
+let dolphinWidth = 157
+let dolphinHeight = 45
 function drawDolphin() {
-    ctx.drawImage(dolphin, 0, 3, 157, 55, dolphinX, 550, 157, 55)
+    ctx.drawImage(dolphin, 0, 3, 157, 55, dolphinX, dolphinY, dolphinWidth, dolphinHeight)
     if (dolphinX < canvas.width + 100) {
-        dolphinX = dolphinX + 5;
+        dolphinX = dolphinX + 2;
     }
     else {
         dolphinX = 100
@@ -113,11 +117,44 @@ function drawDolphin() {
        
 }
 
+
+
+// dolphin x = 200
+// dolphin width = 157
+// dolphin height = 45
+// dolphin y = 550
+
+// penguin 
+// x = 250 
+// y = 580
+// width = 35
+// height = 38
+
+// where I start collision information
+
+function float() {
+    if (dolphinX <= x + width &&
+         dolphinX + dolphinWidth >= x &&
+         dolphinY + dolphinHeight >= y &&
+         dolphinY <= y + height){
+             if(x < canvas.width-30){
+                x = x + 2
+             }
+    }
+    else{
+        y = 600
+    }
+        
+
+}
+
+
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawDolphin();
     drawImage();
     movePenguin();
-    drawDolphin();
+    float();
     requestAnimationFrame(draw);
 }
 
