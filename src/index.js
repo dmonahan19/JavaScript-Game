@@ -1,49 +1,37 @@
+let x = 300;
+let y = 230;
 
+let src;
+let srcY;
 
-var canWidth = 800;
-var canHeight = 500;
+let sheetWidth = 35
+let sheetHeight = 150
 
-var x = 300;
-var y = 230;
+let cols = 1;
+let rows = 4;
 
-var srcX;
-var srcY;
+let frameCount = 1
 
-var sheetWidth = 35
-var sheetHeight = 150
+let width = sheetWidth / cols;
+let height = sheetHeight / rows;
 
-var cols = 1;
-var rows = 4;
-
-var frameCount = 1
-
-var width = sheetWidth / cols;
-var height = sheetHeight / rows;
-
-var currentFrame = 4
+let currentFrame = 4
 
 srcX = 0;
-srcY = currentFrame * height; 
+srcY = currentFrame * height;
 
-var canvas = document.getElementById('canvas');
-canvas.width = canWidth;
-canvas.height = canHeight;
-var ctx = canvas.getContext('2d')
+let canvas = document.getElementById('canvas');
+canvas.width = 800;
+canvas.height = 700;
+let ctx = canvas.getContext('2d')
 
-// function updateFrame(){
-//     // currentFrame = ++currentFrame % rows;
 
-//     srcX = 0;
-//     srcY = currentFrame * height; 
-
-// }
-
-var character = new Image();
+let character = new Image();
 character.src = "assets/penguin.png"
 
-function drawImage(){
-    // updateFrame();
+function drawImage() {
     ctx.drawImage(character, srcX, srcY, width, height, x, y, width, height)
+
 }
 
 let rightPressed = false;
@@ -52,9 +40,9 @@ let upPressed = false;
 let downPressed = false;
 
 document.addEventListener("keydown", keyDownHandler, false)
-document.addEventListener("keyup", keyUpHandler, false )
+document.addEventListener("keyup", keyUpHandler, false)
 
-function keyDownHandler(e){
+function keyDownHandler(e) {
     if (e.keyCode == 39) { rightPressed = true; }
     if (e.keyCode == 37) { leftPressed = true; }
     if (e.keyCode == 38) { upPressed = true; }
@@ -72,8 +60,8 @@ function keyUpHandler(e) {
     let left = true
 }
 
-function movePenguin(){
-    if (upPressed == true && up == true) {
+function movePenguin() {
+    if (upPressed == true && up == true && y > 350) {
         y = y - 44;
         up = false;
         srcY = 147;
@@ -81,7 +69,7 @@ function movePenguin(){
     if (upPressed == false) {
         up = true;
     }
-    if (downPressed == true && down == true) {
+    if (downPressed == true && down == true && y + height < canvas.height-35) {
         y = y + 44;
         down = false;
         srcY = 5;
@@ -90,7 +78,7 @@ function movePenguin(){
         down = true;
     }
 
-    if (rightPressed == true && right == true) {
+    if (rightPressed == true && right == true && x + width < canvas.width-25 ) {
         x = x + 44;
         right = false;
         srcY = 101
@@ -98,7 +86,7 @@ function movePenguin(){
     if (rightPressed == false) {
         right = true;
     }
-    if (leftPressed == true && left == true) {
+    if (leftPressed == true && left == true && x > 20) {
         x = x - 44;
         left = false;
         srcY = 57
@@ -109,11 +97,29 @@ function movePenguin(){
 
 }
 
-function draw(){
+// Starting opstacles
+
+let dolphin = new Image();
+dolphin.src = "assets/dolphin.png"
+let dolphinX = 100;
+function drawDolphin() {
+    ctx.drawImage(dolphin, 0, 3, 157, 55, dolphinX, 550, 157, 55)
+    if (dolphinX < canvas.width + 100) {
+        dolphinX = dolphinX + 5;
+    }
+    else {
+        dolphinX = 100
+    }
+       
+}
+
+function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawImage();
     movePenguin();
+    drawDolphin();
     requestAnimationFrame(draw);
 }
 
 draw();
+

@@ -1,40 +1,37 @@
-var canWidth = 800;
-var canHeight = 500;
+let x = 300;
+let y = 230;
 
-var x = 300;
-var y = 230;
+let src;
+let srcY;
 
-var srcX;
-var srcY;
+let sheetWidth = 35
+let sheetHeight = 150
 
-var sheetWidth = 35
-var sheetHeight = 150
+let cols = 1;
+let rows = 4;
 
-var cols = 1;
-var rows = 4;
+let frameCount = 1
 
-var frameCount = 1
+let width = sheetWidth / cols;
+let height = sheetHeight / rows;
 
-var width = sheetWidth / cols;
-var height = sheetHeight / rows;
-
-var currentFrame = 4
+let currentFrame = 4
 
 srcX = 0;
 srcY = currentFrame * height;
 
-var canvas = document.getElementById('canvas');
-canvas.width = canWidth;
-canvas.height = canHeight;
-var ctx = canvas.getContext('2d')
+let canvas = document.getElementById('canvas');
+canvas.width = 800;
+canvas.height = 500;
+let ctx = canvas.getContext('2d')
 
 
-var character = new Image();
+let character = new Image();
 character.src = "assets/penguin.png"
 
 function drawImage() {
-    // updateFrame();
     ctx.drawImage(character, srcX, srcY, width, height, x, y, width, height)
+
 }
 
 let rightPressed = false;
@@ -108,4 +105,3 @@ function draw() {
 }
 
 draw();
-
