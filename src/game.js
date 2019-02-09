@@ -1,11 +1,7 @@
-var lastTime;
-function main() {
-    var now = Date.now();
-    var dt = (now - lastTime) / 1000.0;
+class Game{
 
-    update(dt);
-    render();
+    gameloop(){
+        
+    }
 
-    lastTime = now;
-    requestAnimFrame(main);
-};
+}
