@@ -19,20 +19,29 @@ function keyUpHandler(e) {
 
 
 
-const penguin = new Penguin(0, 152, 35, 37, 300, 230, 35, 38)
+
+
+
+const penguin = new Penguin(0, 152, 35, 37, 300, 650, 35, 38)
+const dolphin1 = new Dolphin(300, 595, 157, 48)
+const dolphin2 = new Dolphin(40, 595, 157, 48)
+
+
+
+// const dolphin2 = new Dolphin(400, 550, 157, 48)
+const polarBear1 = new PolarBear(100, 300, 400, 250)
+const whale1 = new Whale(100, 500, 500, 350)
 
 function draw() {
+    requestAnimationFrame(draw)
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-   allDolphins.map(dolphin => {
-       dolphin.drawDolphin(ctx)
-   })
+    dolphin1.dolphin()
+    dolphin2.dolphin()
+    // // dolphin2.float()
+    // polarBear1.polarBear()
+    // whale1.whale()
     penguin.penguin()
-    // movePenguin();
-    // createDolphin();
-    // drawDolphin();
-    // drawImage();
-    // float();
-    requestAnimationFrame(draw);
+    // requestAnimationFrame(draw);
 }
 
 draw();

@@ -29,7 +29,6 @@ class Dolphin{
 
 
     float() {
-        for(let i = 0; i < allDolphins.length; i++)
             if (this.dolphinX <= penguin.x + penguin.width &&
                 this.dolphinX + this.dolphinWidth >= penguin.x &&
                 this.dolphinY + this.dolphinHeight >= penguin.y &&
@@ -38,8 +37,8 @@ class Dolphin{
                     penguin.x = penguin.x + 2
                 }
             }
-            else {
-                penguin.y = 600
+            else if(penguin.y < 600) {
+                penguin.y = 650
             }
     }
     dolphin() {
@@ -48,7 +47,7 @@ class Dolphin{
 
 }
 
-var allDolphins = [new Dolphin(100, 550, 157, 48)];
+
 
 
 
