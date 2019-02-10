@@ -44,7 +44,7 @@ class Dolphin{
                 penguin.x = penguin.x - 2
             }
         }
-            else if(penguin.y < 600) {
+            else if(penguin.y < 610) {
                 penguin.y = 650
                 
             }

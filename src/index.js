@@ -29,7 +29,7 @@ function float() {
         }
     }
 
-    if (dolphin2.dolphinX <= penguin.x + penguin.width &&
+    else if (dolphin2.dolphinX <= penguin.x + penguin.width &&
         dolphin2.dolphinX + dolphin2.dolphinWidth >= penguin.x &&
         dolphin2.dolphinY + dolphin2.dolphinHeight >= penguin.y &&
         dolphin2.dolphinY <= penguin.y + penguin.height) {
@@ -85,8 +85,8 @@ function float() {
             penguin.x = penguin.x - 2
         }
     }
-    else if (penguin.y < 600) {
-        penguin.y = 650
+    else if (penguin.y < 650) {
+        penguin.y = 700
 
     }
 }
@@ -96,13 +96,13 @@ function float() {
 
 
 
-const penguin = new Penguin(0, 152, 35, 37, 300, 650, 35, 38)
-const dolphin1 = new Dolphin(350, 610, 157, 30)
-const dolphin2 = new Dolphin(40, 610, 157, 30)
-const polarBear1 = new PolarBear(100, 566, 150, 30)
-const polarBear2 = new PolarBear(400, 566, 150, 30)
-const whale1= new Whale(400, 522, 150, 30)
-const whale2 = new Whale(100, 522, 150, 30)
+const penguin = new Penguin(0, 152, 35, 37, 300, 700, 35, 38)
+const dolphin1 = new Dolphin(350, 620, 157, 30)
+const dolphin2 = new Dolphin(40, 620, 157, 30)
+const polarBear1 = new PolarBear(100, 576, 150, 30)
+const polarBear2 = new PolarBear(400, 576, 150, 30)
+const whale1= new Whale(400, 532, 150, 30)
+const whale2 = new Whale(100, 532, 150, 30)
 const humbackwhale1 = new HumpBackWhale(0, 488, 150, 30)
 const humbackwhale2 = new HumpBackWhale(350, 488, 150, 30)
 

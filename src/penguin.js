@@ -9,8 +9,10 @@ let left = true
 
 let canvas = document.getElementById('canvas');
 canvas.width = 800;
-canvas.height = 700;
+canvas.height = 750;
 let ctx = canvas.getContext('2d')
+let snow = new Image();
+snow.src = "assets/snow3.png"
 
 
 class Penguin{
@@ -30,6 +32,10 @@ class Penguin{
     drawPenguin(ctx) {
         ctx.drawImage(this.img, this.srcX, this.srcY, this.width, this.height, this.x, this.y, 35, 38)
         this.movePenguin()
+    }
+   
+    drawSnow() {
+        ctx.drawImage(snow, 150, 75 ,300, 200, 0, 600, 800, 200)
     }
 
      movePenguin() {
@@ -70,6 +76,7 @@ class Penguin{
     }
 
     penguin(){
+      this.drawSnow();
       this.drawPenguin(ctx)
     }
 }
