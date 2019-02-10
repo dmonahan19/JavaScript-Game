@@ -27,28 +27,6 @@ class Dolphin{
     }
 
 
-    // float() {
-    //         if (this.dolphinX <= penguin.x + penguin.width &&
-    //             this.dolphinX + this.dolphinWidth >= penguin.x &&
-    //             this.dolphinY + this.dolphinHeight >= penguin.y &&
-    //             this.dolphinY <= penguin.y + penguin.height) {
-    //             if (penguin.x < canvas.width - 30) {
-    //                 penguin.x = penguin.x + 2
-    //             }
-    //         }
-    //     else if (this.polarBearX <= penguin.x + penguin.width &&
-    //         this.polarBearX + this.polarBearWidth >= penguin.x &&
-    //         this.polarBearY + this.polarBearHeight >= penguin.y &&
-    //         this.polarBearY <= penguin.y + penguin.height) {
-    //         if (penguin.x > 0) {
-    //             penguin.x = penguin.x - 2
-    //         }
-    //     }
-    //         else if(penguin.y < 610) {
-    //             penguin.y = 650
-                
-    //         }
-    // }
     dolphin() {
         this.drawDolphin(ctx)
     }

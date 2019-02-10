@@ -16,7 +16,7 @@ class PolarBear {
 
     movePolarBear() {
         if (this.polarBearX > 0 - this.polarBearWidth)  {
-            this.polarBearX = this.polarBearX - 2;
+            this.polarBearX = this.polarBearX - 2.5;
         }
         else {
             this.polarBearX = canvas.width + 100
