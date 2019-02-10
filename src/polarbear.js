@@ -10,9 +10,8 @@ class PolarBear {
     }
 
     drawPolarBear(ctx) {
-        ctx.drawImage(this.img, 0, 10, 250, 50, this.polarBearX, this.polarBearY, this.polarBearWidth, this.polarBearHeight)
+        ctx.drawImage(this.img, 0, 10, 400, 50, this.polarBearX, this.polarBearY, this.polarBearWidth, this.polarBearHeight)
         this.move_polarBear()
-        this.floatPolarBear()
     }
 
     move_polarBear() {
@@ -36,8 +35,9 @@ class PolarBear {
                 penguin.x = penguin.x - 2
             }
         }
-        else {
-            penguin.y = 600
+
+        else if(penguin.y < 600) {
+            penguin.y = 650
         }
     }
 

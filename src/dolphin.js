@@ -12,9 +12,8 @@ class Dolphin{
     }
 
     drawDolphin(ctx) {
-            ctx.drawImage(this.img, 0, 3, 157, 55, this.dolphinX, this.dolphinY, this.dolphinWidth, this.dolphinHeight)
+            ctx.drawImage(this.img, 0, 0, 157,70, this.dolphinX, this.dolphinY, this.dolphinWidth, this.dolphinHeight)
             this.move_dolphin()
-            this.float()
 
     }
 
@@ -37,8 +36,17 @@ class Dolphin{
                     penguin.x = penguin.x + 2
                 }
             }
+        else if (this.polarBearX <= penguin.x + penguin.width &&
+            this.polarBearX + this.polarBearWidth >= penguin.x &&
+            this.polarBearY + this.polarBearHeight >= penguin.y &&
+            this.polarBearY <= penguin.y + penguin.height) {
+            if (penguin.x > 0) {
+                penguin.x = penguin.x - 2
+            }
+        }
             else if(penguin.y < 600) {
                 penguin.y = 650
+                
             }
     }
     dolphin() {
