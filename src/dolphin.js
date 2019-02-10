@@ -12,7 +12,7 @@ class Dolphin{
     }
 
     drawDolphin(ctx) {
-            ctx.drawImage(this.img, 0, 0, 157,70, this.dolphinX, this.dolphinY, this.dolphinWidth, this.dolphinHeight)
+            ctx.drawImage(this.img, 0, 0, 170,70, this.dolphinX, this.dolphinY, this.dolphinWidth, this.dolphinHeight)
             this.move_dolphin()
 
     }

@@ -45,6 +45,30 @@ function float() {
             penguin.x = penguin.x - 2
         }
     }
+    else if (polarBear2.polarBearX <= penguin.x + penguin.width &&
+        polarBear2.polarBearX + polarBear2.polarBearWidth >= penguin.x &&
+        polarBear2.polarBearY + polarBear2.polarBearHeight >= penguin.y &&
+        polarBear2.polarBearY <= penguin.y + penguin.height) {
+        if (penguin.x > 0) {
+            penguin.x = penguin.x - 2
+        }
+    }
+    else if (whale1.whaleX <= penguin.x + penguin.width &&
+        whale1.whaleX + whale1.whaleWidth >= penguin.x &&
+        whale1.whaleY + whale1.whaleHeight >= penguin.y &&
+        whale1.whaleY <= penguin.y + penguin.height) {
+        if (penguin.x > 0) {
+            penguin.x = penguin.x + 2
+        }
+    }
+    else if (whale2.whaleX <= penguin.x + penguin.width &&
+        whale2.whaleX + whale2.whaleWidth >= penguin.x &&
+        whale2.whaleY + whale2.whaleHeight >= penguin.y &&
+        whale2.whaleY <= penguin.y + penguin.height) {
+        if (penguin.x > 0) {
+            penguin.x = penguin.x + 2
+        }
+    }
     else if (penguin.y < 600) {
         penguin.y = 650
 
@@ -57,9 +81,12 @@ function float() {
 
 
 const penguin = new Penguin(0, 152, 35, 37, 300, 650, 35, 38)
-const dolphin1 = new Dolphin(300, 610, 157, 30)
+const dolphin1 = new Dolphin(350, 610, 157, 30)
 const dolphin2 = new Dolphin(40, 610, 157, 30)
-const polarBear1 = new PolarBear(100, 566, 400, 30)
+const polarBear1 = new PolarBear(100, 566, 150, 30)
+const polarBear2 = new PolarBear(400, 566, 150, 30)
+const whale1= new Whale(400, 522, 150, 30)
+const whale2 = new Whale(100, 522, 150, 30)
 // const whale1 = new Whale(100, 500, 500, 350)
 
 function draw() {
@@ -67,7 +94,9 @@ function draw() {
     dolphin1.dolphin()
     dolphin2.dolphin()
     polarBear1.polarBear()
-    // whale1.whale()
+    polarBear2.polarBear()
+    whale1.whale()
+    whale2.whale()
     penguin.penguin()
     float()
     requestAnimationFrame(draw)

@@ -10,11 +10,11 @@ class PolarBear {
     }
 
     drawPolarBear(ctx) {
-        ctx.drawImage(this.img, 0, 10, 400, 50, this.polarBearX, this.polarBearY, this.polarBearWidth, this.polarBearHeight)
-        this.move_polarBear()
+        ctx.drawImage(this.img, 0, 10, 200, 95, this.polarBearX, this.polarBearY, this.polarBearWidth, this.polarBearHeight)
+        this.movePolarBear()
     }
 
-    move_polarBear() {
+    movePolarBear() {
         if (this.polarBearX > 0 - this.polarBearWidth)  {
             this.polarBearX = this.polarBearX - 2;
         }
