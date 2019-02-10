@@ -69,6 +69,22 @@ function float() {
             penguin.x = penguin.x + 2
         }
     }
+    else if (humbackwhale1.humpBackWhaleX <= penguin.x + penguin.width &&
+        humbackwhale1.humpBackWhaleX + humbackwhale1.humpBackWhaleWidth >= penguin.x &&
+        humbackwhale1.humpBackWhaleY + humbackwhale1.humpBackWhaleHeight >= penguin.y &&
+        humbackwhale1.humpBackWhaleY <= penguin.y + penguin.height) {
+        if (penguin.x > 0) {
+            penguin.x = penguin.x - 2
+        }
+    }
+    else if (humbackwhale2.humpBackWhaleX <= penguin.x + penguin.width &&
+        humbackwhale2.humpBackWhaleX + humbackwhale2.humpBackWhaleWidth >= penguin.x &&
+        humbackwhale2.humpBackWhaleY + humbackwhale2.humpBackWhaleHeight >= penguin.y &&
+        humbackwhale2.humpBackWhaleY <= penguin.y + penguin.height) {
+        if (penguin.x > 0) {
+            penguin.x = penguin.x - 2
+        }
+    }
     else if (penguin.y < 600) {
         penguin.y = 650
 
@@ -87,7 +103,9 @@ const polarBear1 = new PolarBear(100, 566, 150, 30)
 const polarBear2 = new PolarBear(400, 566, 150, 30)
 const whale1= new Whale(400, 522, 150, 30)
 const whale2 = new Whale(100, 522, 150, 30)
-// const whale1 = new Whale(100, 500, 500, 350)
+const humbackwhale1 = new HumpBackWhale(0, 488, 150, 30)
+const humbackwhale2 = new HumpBackWhale(350, 488, 150, 30)
+
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -97,6 +115,8 @@ function draw() {
     polarBear2.polarBear()
     whale1.whale()
     whale2.whale()
+    humbackwhale1.humpBackWhale() 
+    humbackwhale2.humpBackWhale() 
     penguin.penguin()
     float()
     requestAnimationFrame(draw)
