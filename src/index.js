@@ -31,7 +31,7 @@ function draw() {
 
     if (play){
         game.lives()
-        dolphin1.dolphin()
+        dolphin1.dolphin();
         dolphin2.dolphin()
         polarBear1.polarBear()
         polarBear2.polarBear()

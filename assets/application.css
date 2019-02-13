@@ -4,8 +4,16 @@
   /* z-index: 2;  */
 }
 
-.sprite {
+body{
+  display: flex;
+  justify-content: center;
+  background-image: url(background-snow1.png);
+  background-size: cover;
+  margin-top: 50px;
+
+}
+/* .sprite {
 	background: url('imgs/penguin_sheet.png') no-repeat -443px -204px;
 	width: 122px;
 	height: 178px;
-}
+} */

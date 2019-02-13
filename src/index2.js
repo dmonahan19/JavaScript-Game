@@ -198,3 +198,43 @@ function draw() {
 }
 
 draw();
+
+
+
+
+class Dolphin {
+
+    constructor(srcY, srcX, width, height, posX, posY, animalWidth, animalHeight, movementSpeed, frameTicks = 6) {
+        this.img = new Image();
+        this.img.src = "assets/dolphin-sprite.png"
+        this.posX = posX;
+        this.posY = posY;
+        this.srcY = srcY;
+        this.srcX = srcX;
+        this.width = width;
+        this.height = height;
+        this.animalWidth = animalWidth;
+        this.animalHeight = animalHeight;
+        this.movementSpeed = movementSpeed;
+        this.frameTicks = frameTicks;
+        this.frameIndex = 0;
+        this.tickCount = 0;
+    }
+
+
+    drawDolphin() {
+        ctx.drawImage(this.img, this.srcX[this.frameIndex], this.srcY[this.frameIndex], this.width, this.height, this.posX, this.posY, this.animalWidth, this.animalHeight);
+        this.posX += this.movementSpeed;
+        this.tickCount += 1;
+        if (this.tickCount === this.frameTicks) {
+            this.tickCount = 0;
+            this.frameIndex = (this.frameIndex + 1) % this.srcX.length;
+        }
+        if (this.posX > canvas.width + 100) {
+            this.posX = -100;
+        }
+
+    }
+
+}
+
