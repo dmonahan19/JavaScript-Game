@@ -4,8 +4,11 @@ const dolphin1 = new Dolphin(350, 620, 157, 30)
 const dolphin2 = new Dolphin(40, 620, 157, 30)
 const polarBear1 = new PolarBear(100, 576, 150, 30)
 const polarBear2 = new PolarBear(400, 576, 150, 30)
-const whale1 = new Whale(400, 532, 150, 30)
-const whale2 = new Whale(100, 532, 150, 30)
+// const whale1 = new Whale([11, 100, 201, 293, 385, 481], [95, 98, 97, 95, 96, 97],400, 532, 150, 30)
+// const whale2 = new Whale([11, 100, 201, 293, 385, 481], [95, 98, 97, 95, 96, 97],100, 532, 150, 30)
+
+const whale1 = new Whale([95, 98, 97, 95, 96, 97], [11, 100, 201, 293, 385, 481], 72, 31, 400, 532, 90, 40, 3, 10)
+const whale2 = new Whale([95, 98, 97, 95, 96, 97], [11, 100, 201, 293, 385, 481], 72, 31, 100, 532, 90, 40, 3, 10)
 const humbackwhale1 = new HumpBackWhale(0, 488, 150, 30)
 const humbackwhale2 = new HumpBackWhale(350, 488, 150, 30)
 const dolphin3 = new Dolphin(350, 444, 157, 30)
@@ -54,20 +57,20 @@ class Obstacle{
                 penguin.x = penguin.x - 2.5
             }
         }
-        else if (whale1.whaleX <= penguin.x + penguin.width &&
-            whale1.whaleX + whale1.whaleWidth >= penguin.x &&
-            whale1.whaleY + whale1.whaleHeight >= penguin.y &&
-            whale1.whaleY <= penguin.y + penguin.height) {
+        else if (whale1.posX <= penguin.x + penguin.width &&
+            whale1.posX + whale1.animalWidth >= penguin.x &&
+            whale1.posY + whale1.animalHeight >= penguin.y &&
+            whale1.posY <= penguin.y + penguin.height) {
             if (penguin.x > 0) {
-                penguin.x = penguin.x + 2
+                penguin.x = penguin.x + whale1.movementSpeed
             }
         }
-        else if (whale2.whaleX <= penguin.x + penguin.width &&
-            whale2.whaleX + whale2.whaleWidth >= penguin.x &&
-            whale2.whaleY + whale2.whaleHeight >= penguin.y &&
-            whale2.whaleY <= penguin.y + penguin.height) {
+        else if (whale2.posX <= penguin.x + penguin.width &&
+            whale2.posX + whale2.animalWidth >= penguin.x &&
+            whale2.posY + whale2.animalHeight >= penguin.y &&
+            whale2.posY <= penguin.y + penguin.height) {
             if (penguin.x > 0) {
-                penguin.x = penguin.x + 2
+                penguin.x = penguin.x + whale2.movementSpeed
             }
         }
         else if (humbackwhale1.humpBackWhaleX <= penguin.x + penguin.width &&

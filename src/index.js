@@ -35,8 +35,10 @@ function draw() {
         dolphin2.dolphin()
         polarBear1.polarBear()
         polarBear2.polarBear()
-        whale1.whale()
-        whale2.whale()
+        // whale1.whale()
+        // whale2.whale()
+        whale1.drawWhale();
+        whale2.drawWhale();
         humbackwhale1.humpBackWhale() 
         humbackwhale2.humpBackWhale() 
         dolphin3.dolphin()

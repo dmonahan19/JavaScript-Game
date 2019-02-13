@@ -11,6 +11,9 @@ let canvas = document.getElementById('canvas');
 canvas.width = 800;
 canvas.height = 750;
 let ctx = canvas.getContext('2d')
+if (!!ctx.imageSmoothingQuality) {
+    ctx.imageSmoothingQuality = "high"
+}
 let snow = new Image();
 snow.src = "assets/snow3.png"
 
