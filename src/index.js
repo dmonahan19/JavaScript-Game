@@ -19,7 +19,9 @@ function keyUpHandler(e) {
 
 const obstacles = new Obstacle();
 const game = new Game();
-
+// let dolphin = new Image();
+// dolphin.src = "assets/dolphin.png";
+// const dolphin8 = new Object(dolphin, 0, 0, 170, 70, 450, 620, 157, 30, 3);
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -27,30 +29,29 @@ function draw() {
    
     
     game.gameOver();
-    obstacles.winner()
+    obstacles.winner();
 
     if (play){
-        game.lives()
-        dolphin1.dolphin();
-        dolphin2.dolphin()
-        polarBear1.polarBear()
-        polarBear2.polarBear()
-        // whale1.whale()
-        // whale2.whale()
+        game.lives();
+        dolphin1.drawObject();
+        dolphin2.drawObject();
+        polarBear1.drawObject();
+        polarBear2.drawObject();
         whale1.drawWhale();
         whale2.drawWhale();
-        humbackwhale1.humpBackWhale() 
-        humbackwhale2.humpBackWhale() 
-        dolphin3.dolphin()
-        dolphin4.dolphin()
-        polarBear3.polarBear()
-        polarBear4.polarBear()
-        iceberg1.drawIceberg(ctx)
-        iceberg2.drawIceberg(ctx)
-        iceberg3.drawIceberg(ctx)
+        humpbackwhale1.drawObject();
+        humpbackwhale2.drawObject();
+        dolphin3.drawObject();
+        dolphin4.drawObject();
+        polarBear3.drawObject();
+        polarBear4.drawObject();
+        iceberg1.drawIceberg(ctx);
+        iceberg2.drawIceberg(ctx);
+        iceberg3.drawIceberg(ctx);
         obstacles.oniceberg();
-        penguin.penguin()
-        obstacles.float()
+        penguin.penguin();
+        obstacles.float();
+        game.timer();
     }
     requestAnimationFrame(draw)
 }
