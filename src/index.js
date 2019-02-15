@@ -3,6 +3,7 @@
 document.addEventListener("keydown", keyDownHandler, false)
 document.addEventListener("keyup", keyUpHandler, false)
 
+
 function keyDownHandler(e) {
     if (e.keyCode == 39) { rightPressed = true; }
     if (e.keyCode == 37) { leftPressed = true; }
@@ -22,6 +23,8 @@ const game = new Game();
 // let dolphin = new Image();
 // dolphin.src = "assets/dolphin.png";
 // const dolphin8 = new Object(dolphin, 0, 0, 170, 70, 450, 620, 157, 30, 3);
+
+
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -53,8 +56,21 @@ function draw() {
         obstacles.float();
         game.timer();
     }
-    requestAnimationFrame(draw)
+    requestAnimationFrame(draw);
 }
 
-draw();
+
+window.addEventListener("keyup", e => {
+    if (e.keyCode === 13 && play===false) {
+        play = true;
+        document.getElementById("game").classList.remove("off");
+        document.getElementById("game").classList.add("on");
+        document.getElementById("gameScreen").classList.remove("on");
+        document.getElementById("gameScreen").classList.add("off");
+        draw();
+    }
+});
+
+
+
 

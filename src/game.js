@@ -1,6 +1,6 @@
 let lives = 3;
 let livesLost = 0;
-let play = true;
+let play = false;
 let winner = false;
 let time = 10;
 

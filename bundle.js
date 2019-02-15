@@ -168,7 +168,16 @@ function draw() {
   requestAnimationFrame(draw);
 }
 
-draw();
+window.addEventListener("keyup", function (e) {
+  if (e.keyCode === 13 && play === false) {
+    play = true;
+    document.getElementById("game").classList.remove("off");
+    document.getElementById("game").classList.add("on");
+    document.getElementById("gameScreen").classList.remove("on");
+    document.getElementById("gameScreen").classList.add("off");
+    draw();
+  }
+});
 
 /***/ })
 

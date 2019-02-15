@@ -7,19 +7,41 @@
     <title>Penguin</title>
     <!-- <script type="text/javascript" src="./dist/main.js"></script> -->
     <link rel="stylesheet" type="text/css" href="./assets/application.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
 </head>
-<body>
+<div id='gameScreen' class='on'>
+    <div id='startScreen'>
+        <div>
+            <h1>Penguin</h1>
+        </div>
+        <div>
+            <p>Press Enter <span></span> to Start</p>
+        </div>
+    </div>
+</div>
+ <div id='game' class='off'>
     <canvas id="canvas" width="900" height="500"></canvas>
+<div>
+    
+
     <script src="src/penguin.js"></script>
-    <script src="src/dolphin.js"></script>
-    <script src="src/polarbear.js"></script>
     <script src="src/whale.js"></script>
-    <script src="src/humpbackwhale.js"></script>
     <script src="src/ice_berg.js"></script>
     <script src="src/objects.js"></script>
+    <script src="src/animals.js"></script>
     <script src="src/game.js"></script>
     <script src="src/obstacle.js"></script>
     <script src="src/index.js"></script>
+
+    <footer class='footer'>
+        <ul class='links'>
+            <li><a href="dmonahan@udel.edu"><i class="fas fa-envelope fa-3x"></i></a></li>
+            <li><a href="https://github.com/dmonahan19/JavaScript-Game"><i class="fab fa-github fa-3x"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/danielle-monahan-7149b257/"><i class="fab fa-linkedin fa-3x"></i></a></li>
+            <li><a href="https://dmonahan19.github.io/"><i class="fas fa-folder fa-3x"></i></a></li>
+        </ul>
+    </footer>
    
 </body>
 </html>

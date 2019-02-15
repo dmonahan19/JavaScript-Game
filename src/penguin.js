@@ -10,9 +10,9 @@ let left = true
 let canvas = document.getElementById('canvas');
 canvas.width = 800;
 canvas.height = 750;
-let ctx = canvas.getContext('2d')
+let ctx = canvas.getContext('2d');
 if (!!ctx.imageSmoothingQuality) {
-    ctx.imageSmoothingQuality = "high"
+    ctx.imageSmoothingQuality = "high";
 }
 let snow = new Image();
 snow.src = "assets/snow3.png"
@@ -21,13 +21,13 @@ snow.src = "assets/snow3.png"
 class Penguin{
     constructor(srcX,srcY, width, height, x, y) {
         this.img = new Image();
-        this.img.src = "assets/penguin.png"
+        this.img.src = "assets/penguin.png";
         this.x = x;
         this.y = y;
-        this.width = width
-        this.height = height
-        this.srcX = srcX
-        this.srcY = srcY
+        this.width = width;
+        this.height = height;
+        this.srcX = srcX;
+        this.srcY = srcY;
 
     }
 

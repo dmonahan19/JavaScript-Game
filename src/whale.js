@@ -52,7 +52,7 @@
 class Whale {
     constructor(srcY, srcX, width, height, posX, posY, animalWidth, animalHeight, movementSpeed, frameTicks = 4) {
         this.img= new Image();
-        this.img.src= './assets/whale-sprite.png'
+        this.img.src= './assets/whale-sprite.png';
         this.posX = posX;
         this.posY = posY;
         this.srcY = srcY;
