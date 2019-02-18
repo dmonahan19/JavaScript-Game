@@ -133,9 +133,7 @@ function keyUpHandler(e) {
 }
 
 var obstacles = new Obstacle();
-var game = new Game(); // let dolphin = new Image();
-// dolphin.src = "assets/dolphin.png";
-// const dolphin8 = new Object(dolphin, 0, 0, 170, 70, 450, 620, 157, 30, 3);
+var game = new Game();
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -175,6 +173,16 @@ window.addEventListener("keyup", function (e) {
     document.getElementById("game").classList.add("on");
     document.getElementById("gameScreen").classList.remove("on");
     document.getElementById("gameScreen").classList.add("off");
+    draw();
+  }
+});
+window.addEventListener("keyup", function (e) {
+  if (e.keyCode === 32 && play === false) {
+    play = true;
+    document.getElementById("game").classList.remove("off");
+    document.getElementById("game").classList.add("on");
+    document.getElementById("gameOver").classList.remove("on");
+    document.getElementById("gameOver").classList.add("off");
     draw();
   }
 });

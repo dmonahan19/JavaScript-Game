@@ -2,7 +2,7 @@ let lives = 3;
 let livesLost = 0;
 let play = false;
 let winner = false;
-let time = 10;
+let time = 180;
 
 class Game{
     // constructor(){
@@ -19,13 +19,20 @@ class Game{
     }
 
     gameOver(){
-        if (lives - livesLost === 0 || time === 0){
+        if (lives - livesLost === 0 || time < 1){
             play = false;
             ctx.fillstyle = "white";
             ctx.font = "72px Arial";
-            ctx.fillText("GAME OVER", (canvas.width / 2) - 200 , 200);
+            ctx.fillText("GAME OVER", (canvas.width / 2) - 200 , 250);
+            setTimeout(() => {
+                document.getElementById("gameOver").classList.remove("off");
+                document.getElementById("gameOver").classList.add("on");
+                document.getElementById("game").classList.remove("on");
+                document.getElementById("game").classList.add("off");
+            }, 2000);
         }
     }
+
 
     timer() {
         if (time >= 0 && play === true) {

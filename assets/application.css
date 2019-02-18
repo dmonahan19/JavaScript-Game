@@ -12,11 +12,7 @@ body{
   margin-top: 50px;
 
 }
-/* 
-body {
-  height: 100vh;
-  background: linear-gradient(#333, white) no-repeat;
-} */
+
 
 #startScreen {
   display: flex;
@@ -35,6 +31,8 @@ body {
   animation-fill-mode: forwards;
   z-index: 10;
 }
+
+
 
 @keyframes boom {
   100% {
@@ -70,6 +68,8 @@ body {
 }
 
 
+
+
 .off{
   display: none;
 }
@@ -81,12 +81,26 @@ body {
 .links{
   display: flex;
   justify-content: space-between;
-  width: 90%;
 }
 
-footer li{
+.links li{
   list-style: none;
+  margin-right: 100px;
+  
 }
+
+.footer{
+  position: absolute;
+  top: 800px;
+  left: 450px;
+}
+
+.footer1{
+  position: absolute;
+  top: 400px;
+  left: 450px;
+}
+
 
 
 

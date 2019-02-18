@@ -1,7 +1,7 @@
 
 
-document.addEventListener("keydown", keyDownHandler, false)
-document.addEventListener("keyup", keyUpHandler, false)
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
 
 
 function keyDownHandler(e) {
@@ -20,16 +20,12 @@ function keyUpHandler(e) {
 
 const obstacles = new Obstacle();
 const game = new Game();
-// let dolphin = new Image();
-// dolphin.src = "assets/dolphin.png";
-// const dolphin8 = new Object(dolphin, 0, 0, 170, 70, 450, 620, 157, 30, 3);
+
 
 
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-   
     
     game.gameOver();
     obstacles.winner();
@@ -61,15 +57,30 @@ function draw() {
 
 
 window.addEventListener("keyup", e => {
-    if (e.keyCode === 13 && play===false) {
+    if (e.keyCode === 13 && play === false) {
         play = true;
         document.getElementById("game").classList.remove("off");
         document.getElementById("game").classList.add("on");
         document.getElementById("gameScreen").classList.remove("on");
         document.getElementById("gameScreen").classList.add("off");
+        document.getElementById("foot").classList.remove("footer1");
+        document.getElementById("foot").classList.add("footer");
         draw();
     }
 });
+
+window.addEventListener("keyup", e => { 
+    if (e.keyCode === 32 && play === false) {
+        console.log("hi")
+        play = true;
+        document.getElementById("game").className = "on";
+        // document.getElementById("game").classList.add("on");
+        // document.getElementById("gameOver").classList.remove("on");
+        document.getElementById("gameOver").className = "off";
+        draw();   
+    }
+});
+
 
 
 

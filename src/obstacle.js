@@ -1,3 +1,5 @@
+let save = 0;
+let savePenguins = 0;
 
 class Obstacle{
     
@@ -106,14 +108,14 @@ class Obstacle{
             iceberg1.icebergY + iceberg1.icebergHeight >= penguin.y &&
             iceberg1.icebergY <= penguin.y + penguin.height) {
             iceberg1.onIceBerg = true;
-            penguin.y = 700
+            penguin.y = 700;
         }
         else if (iceberg2.icebergX <= penguin.x + penguin.width &&
             iceberg2.icebergX + iceberg2.icebergWidth >= penguin.x &&
             iceberg2.icebergY + iceberg2.icebergHeight >= penguin.y &&
             iceberg2.icebergY <= penguin.y + penguin.height) {
             iceberg2.onIceBerg = true;
-            penguin.y = 700
+            penguin.y = 700;
         }
         else if (iceberg3.icebergX <= penguin.x + penguin.width &&
             iceberg3.icebergX + iceberg3.icebergWidth >= penguin.x &&
@@ -139,6 +141,12 @@ class Obstacle{
         for (let i = 0; i < icebergs.length; i++)
             if (icebergs[i].onIceBerg === true) {
                 ctx.drawImage(character, 0, 5, 35, 37, (icebergs[i].icebergX + 100), (icebergs[i].icebergY - 10), 35, 38);
+                if(savePenguins === save){
+                    savePenguins += 1;
+                }
+                if (savePenguins === save + 1) {
+                    savePenguins += 1;
+                }
             }
     }   
 
@@ -149,6 +157,12 @@ class Obstacle{
             ctx.fillText("You Won! ", (canvas.width / 2) - 60, 200)
             winner = true;
             play = false;
+            setTimeout(() => {
+                document.getElementById("gameOver").classList.remove("off");
+                document.getElementById("gameOver").classList.add("on");
+                document.getElementById("game").classList.remove("on");
+                document.getElementById("game").classList.add("off");
+            }, 2000);
         }
     }
 
