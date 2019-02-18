@@ -20,7 +20,7 @@ class Object {
         if (this.movementSpeed > 0) {
             if (this.posX < canvas.width + 100) {
                 if(savePenguins === 1 && this.prevSpeed === this.movementSpeed){
-                    this.movementSpeed += 1;
+                    this.movementSpeed += 2;
                 }
                 if (savePenguins === 2 && this.prevSpeed + 1 === this.movementSpeed) {
                     this.movementSpeed += 10;

@@ -144,9 +144,6 @@ class Obstacle{
                 if(savePenguins === save){
                     savePenguins += 1;
                 }
-                if (savePenguins === save + 1) {
-                    savePenguins += 1;
-                }
             }
     }   
 
