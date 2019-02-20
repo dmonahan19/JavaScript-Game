@@ -128,6 +128,22 @@ body{
   animation: pulse 6s linear infinite;
 }
 
+.direction{
+  display:flex;
+  flex-direction: column;
+  width: 300px;
+  position: absolute;
+  left: 150px;
+  top: 600px;
+  color: rgb(1, 105, 165);
+}
+
+.direction-text{
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
 
 
 
