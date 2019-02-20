@@ -2,7 +2,7 @@ let lives = 3;
 let livesLost = 0;
 let play = false;
 let winner = false;
-let time = 180;
+let time = 200;
 
 class Game{
     // constructor(){
@@ -39,6 +39,7 @@ class Game{
             ctx.fillStyle = "#0fb9fc";
             ctx.fillText("TIMER:", 210, 250);
             ctx.fillRect(320, 230, time, 20);
+            ctx.fillText(Math.floor(time), time+325, 250);
             time = time - 0.1;
         }
     }
