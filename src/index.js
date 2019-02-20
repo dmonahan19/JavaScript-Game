@@ -5,6 +5,7 @@ document.addEventListener("keyup", keyUpHandler, false);
 
 
 function keyDownHandler(e) {
+    e.preventDefault();
     if (e.keyCode == 39) { rightPressed = true; }
     if (e.keyCode == 37) { leftPressed = true; }
     if (e.keyCode == 38) { upPressed = true; }
@@ -18,10 +19,10 @@ function keyUpHandler(e) {
     if (e.keyCode == 40) { downPressed = false; }
 }
 
-const obstacles = new Obstacle();
-const game = new Game();
 
 
+let obstacles = new Obstacle();
+let game = new Game();
 
 
 function draw() {
@@ -71,12 +72,12 @@ window.addEventListener("keyup", e => {
 
 window.addEventListener("keyup", e => { 
     if (e.keyCode === 32 && play === false) {
-        console.log("hi")
         play = true;
-        document.getElementById("game").className = "on";
-        // document.getElementById("game").classList.add("on");
-        // document.getElementById("gameOver").classList.remove("on");
-        document.getElementById("gameOver").className = "off";
+        location.reload(); 
+        document.getElementById("game").classList.remove("off");
+        document.getElementById("game").classList.add("on");
+        document.getElementById("gameOver").classList.remove("on");
+        document.getElementById("gameOver").classList.add("off");
         draw();   
     }
 });

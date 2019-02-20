@@ -135,7 +135,7 @@ class Obstacle{
 
 
     oniceberg() {
-        const icebergs = [iceberg1, iceberg2, iceberg3];
+        let icebergs = [iceberg1, iceberg2, iceberg3];
         let character = new Image();
         character.src = "assets/penguin.png";
         for (let i = 0; i < icebergs.length; i++)

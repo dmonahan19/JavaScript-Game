@@ -30,8 +30,28 @@ body{
   animation: boom 1s linear;
   animation-fill-mode: forwards;
   z-index: 10;
+  position: relative;
+  left: 515px;
 }
 
+
+#startScreen1 {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  height: 300px;
+  width: 300px;
+  background-color: whitesmoke;
+  color: rgb(5, 122, 189);
+  text-align: center;
+  border: 8px solid;
+  border-radius: 10px;
+  box-shadow: 0 1px 32px white;
+  transform: rotate(0) scale(0);
+  animation: boom 1s linear;
+  animation-fill-mode: forwards;
+  z-index: 10;
+}
 
 
 @keyframes boom {
@@ -48,6 +68,7 @@ body{
   text-shadow: 0 1px 2px;
   animation: pulse 6s linear infinite;
 }
+
 
 @keyframes pulse {
   50% {
@@ -69,7 +90,6 @@ body{
 
 
 
-
 .off{
   display: none;
 }
@@ -85,7 +105,7 @@ body{
 
 .links li{
   list-style: none;
-  margin-right: 100px;
+  margin-right: 150px;
   
 }
 
@@ -96,9 +116,16 @@ body{
 }
 
 .footer1{
-  position: absolute;
-  top: 400px;
-  left: 450px;
+  display: flex;
+  align-content: flex-end;
+  margin-top: 370px;
+  margin-right: 100px;
+}
+
+.game-over-word{
+  font-size: 42px;
+   text-shadow: 0 1px 2px;
+  animation: pulse 6s linear infinite;
 }
 
 
