@@ -18,8 +18,8 @@ body{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 300px;
-  width: 300px;
+  height: 375px;
+  width: 375px;
   background-color: whitesmoke;
   color: rgb(5, 122, 189);
   text-align: center;
@@ -69,6 +69,14 @@ body{
   animation: pulse 6s linear infinite;
 }
 
+#startScreen h2 {
+  text-align: center;
+  color: #222;
+  font-size: 32px;
+  text-shadow: 0 1px 2px;
+  animation: pulse 6s linear infinite;
+}
+
 
 @keyframes pulse {
   50% {
@@ -79,11 +87,12 @@ body{
 #startScreen p {
   text-align: center;
   font-weight: bold;
+  font-size: 20px;
 }
 
 #startScreen span {
   position: relative;
-  font-size: 18px;
+  font-size: 20px;
   animation: up 2s linear infinite;
   animation-delay: 3s;
 }
@@ -112,13 +121,13 @@ body{
 .footer{
   position: absolute;
   top: 800px;
-  left: 450px;
+  left: 600px;
 }
 
 .footer1{
   display: flex;
   align-content: flex-end;
-  margin-top: 370px;
+  margin-top: 435px;
   margin-right: 100px;
 }
 
@@ -133,7 +142,7 @@ body{
   flex-direction: column;
   width: 300px;
   position: absolute;
-  left: 150px;
+  left: 200px;
   top: 600px;
   color: rgb(1, 105, 165);
 }
