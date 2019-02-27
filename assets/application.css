@@ -13,6 +13,14 @@ body{
 
 }
 
+#game-canvas{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  left: 750px;
+}
+
 
 #startScreen {
   display: flex;
@@ -37,10 +45,10 @@ body{
 
 #startScreen1 {
   display: flex;
-  align-content: center;
+  justify-content: center;
   flex-direction: column;
-  height: 300px;
-  width: 300px;
+  height: 375px;
+  width: 375px;
   background-color: whitesmoke;
   color: rgb(5, 122, 189);
   text-align: center;
@@ -51,6 +59,8 @@ body{
   animation: boom 1s linear;
   animation-fill-mode: forwards;
   z-index: 10;
+  position: relative;
+  left: 515px;
 }
 
 
@@ -119,9 +129,10 @@ body{
 }
 
 .footer{
-  position: absolute;
-  top: 800px;
-  left: 600px;
+  display: flex;
+  align-content: flex-end;
+  margin-top: 750px;
+  margin-right: 400px;
 }
 
 .footer1{

@@ -29,6 +29,8 @@ class Game{
                 document.getElementById("gameOver").classList.add("on");
                 document.getElementById("game").classList.remove("on");
                 document.getElementById("game").classList.add("off");
+                document.getElementById("foot").classList.remove("footer");
+                document.getElementById("foot").classList.add("footer1");
             }, 2000);
         }
     }
