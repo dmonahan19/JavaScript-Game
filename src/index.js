@@ -2,6 +2,9 @@
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+let music = document.getElementById('music');
+let sound = document.getElementById('sound');
+let playMusic = true;
 
 
 function keyDownHandler(e) {
@@ -10,6 +13,17 @@ function keyDownHandler(e) {
     if (e.keyCode == 37) { leftPressed = true; }
     if (e.keyCode == 38) { upPressed = true; }
     if (e.keyCode == 40) { downPressed = true; }
+    if (e.keyCode == 9) {
+        playMusic = !playMusic;
+        if (playMusic){
+            sound.style.display = 'none';
+            mute.style.display = 'inline';
+        }
+        else{
+            sound.style.display = 'inline';
+            mute.style.display = 'none';
+        }
+    }
 }
 
 function keyUpHandler(e) {
@@ -18,7 +32,6 @@ function keyUpHandler(e) {
     if (e.keyCode == 38) { upPressed = false; }
     if (e.keyCode == 40) { downPressed = false; }
 }
-
 
 
 let obstacles = new Obstacle();
@@ -32,6 +45,13 @@ function draw() {
     obstacles.winner();
 
     if (play){
+        if (playMusic) {
+            music.play();
+            sound.style.display = 'none';
+            mute.style.display = 'inline';
+        } else{ 
+            music.pause();
+        }
         game.lives();
         dolphin1.drawObject();
         dolphin2.drawObject();
@@ -81,6 +101,22 @@ window.addEventListener("keyup", e => {
         draw();   
     }
 });
+
+
+if (currentlyPressedKeys.m) {
+    playBgm = false;
+    playSound = false;
+    soundBtn.style.display = 'none';
+    muteBtn.style.display = 'inline';
+}
+if (currentlyPressedKeys.n) {
+    playBgm = true;
+    playSound = true;
+    soundBtn.style.display = 'inline';
+    muteBtn.style.display = 'none';
+}
+
+
 
 
 

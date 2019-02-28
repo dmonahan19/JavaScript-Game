@@ -1,5 +1,8 @@
 let save = 0;
 let savePenguins = 0;
+let splash = new Image();
+splash.src = './assets/splash.png';
+let splash1 = new Splash(splash, [28, 44, 53, 34, 34, 34, 15, 15], [27, 29, 35, 93, 53, 54, 60, 12], 72, 31, penguin.posX, penguin.posY, 90, 40);
 
 class Obstacle{
     
@@ -128,10 +131,13 @@ class Obstacle{
         else if (penguin.y < 650 && penguin.y > 409) {
             penguin.y = 700;
             livesLost += 1;
+            splash1.handleDying();
 
         }
 
     }
+
+
 
 
     oniceberg() {
@@ -146,6 +152,8 @@ class Obstacle{
                 }
             }
     }   
+
+
 
     winner(){
         if (iceberg1.onIceBerg && iceberg2.onIceBerg && iceberg3.onIceBerg){

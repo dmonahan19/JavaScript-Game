@@ -2,10 +2,10 @@ let rightPressed = false;
 let leftPressed = false;
 let upPressed = false;
 let downPressed = false;
-let up = true
-let down = true
-let right = true
-let left = true
+let up = true;
+let down = true;
+let right = true;
+let left = true;
 
 let canvas = document.getElementById('canvas');
 canvas.width = 800;
@@ -15,7 +15,7 @@ if (!!ctx.imageSmoothingQuality) {
     ctx.imageSmoothingQuality = "high";
 }
 let snow = new Image();
-snow.src = "assets/snow3.png"
+snow.src = "assets/snow3.png";
 
 
 class Penguin{
@@ -73,7 +73,7 @@ class Penguin{
         if (leftPressed == true && left == true && this.x > 20) {
             this.x = this.x - 44;
             left = false;
-            this.srcY = 57
+            this.srcY = 57;
         }
         if (leftPressed == false) {
             left = true;
@@ -83,8 +83,11 @@ class Penguin{
 
     penguin(){
       this.drawSnow();
-      this.drawPenguin(ctx)
+      this.drawPenguin(ctx);
     }
+
+
+
 }
 
 // const penguin = new Penguin(0, 152, 35, 38, 300, 230, 38, 35)
