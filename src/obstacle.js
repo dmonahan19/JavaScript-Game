@@ -1,19 +1,15 @@
 let save = 0;
 let savePenguins = 0;
-let splash = new Image();
-splash.src = './assets/splash.png';
-let splash1 = new Splash(splash, [28, 44, 53, 34, 34, 34, 15, 15], [27, 29, 35, 93, 53, 54, 60, 12], 72, 31, penguin.posX, penguin.posY, 90, 40);
 
 class Obstacle{
     
-
     float() {
 
         if (dolphin1.posX <= penguin.x + penguin.width &&
             dolphin1.posX + dolphin1.animalWidth >= penguin.x &&
             dolphin1.posY + dolphin1.animalHeight >= penguin.y &&
             dolphin1.posY <= penguin.y + penguin.height) {
-            if (penguin.x < canvas.width - 30) {
+            if (penguin.x < canvas.width - 100) {
                 penguin.x = penguin.x + dolphin1.movementSpeed;
             }
         }
@@ -21,7 +17,7 @@ class Obstacle{
             dolphin2.posX + dolphin2.animalWidth >= penguin.x &&
             dolphin2.posY + dolphin2.animalHeight >= penguin.y &&
             dolphin2.posY <= penguin.y + penguin.height) {
-            if (penguin.x < canvas.width - 30) {
+            if (penguin.x < canvas.width - 100) {
                 penguin.x = penguin.x + dolphin1.movementSpeed;
             }
         }
@@ -45,7 +41,7 @@ class Obstacle{
             whale1.posX + whale1.animalWidth >= penguin.x &&
             whale1.posY + whale1.animalHeight >= penguin.y &&
             whale1.posY <= penguin.y + penguin.height) {
-            if (penguin.x < canvas.width - 30) {
+            if (penguin.x < canvas.width - 100) {
                 penguin.x = penguin.x + whale1.movementSpeed;
             }
         }
@@ -53,7 +49,7 @@ class Obstacle{
             whale2.posX + whale2.animalWidth >= penguin.x &&
             whale2.posY + whale2.animalHeight >= penguin.y &&
             whale2.posY <= penguin.y + penguin.height) {
-            if (penguin.x < canvas.width - 30) {
+            if (penguin.x < canvas.width - 100) {
                 penguin.x = penguin.x + whale1.movementSpeed;
             }
         }
@@ -77,7 +73,7 @@ class Obstacle{
             dolphin3.posX + dolphin3.animalWidth >= penguin.x &&
             dolphin3.posY + dolphin3.animalHeight >= penguin.y &&
             dolphin3.posY <= penguin.y + penguin.height) {
-            if (penguin.x < canvas.width - 30) {
+            if (penguin.x < canvas.width - 100) {
                 penguin.x = penguin.x + dolphin3.movementSpeed;
             }
         }
@@ -85,7 +81,7 @@ class Obstacle{
             dolphin4.posX + dolphin4.animalWidth >= penguin.x &&
             dolphin4.posY + dolphin4.animalHeight >= penguin.y &&
             dolphin4.posY <= penguin.y + penguin.height) {
-            if (penguin.x < canvas.width - 30) {
+            if (penguin.x < canvas.width - 100) {
                 penguin.x = penguin.x + dolphin4.movementSpeed;
             }
         }
@@ -129,47 +125,49 @@ class Obstacle{
         }
 
         else if (penguin.y < 650 && penguin.y > 409) {
-            penguin.y = 700;
+            pos = penguin.y;
+            penguin.y = 800;
+            splash1.drawSplash();
+            splashSound.play();
             livesLost += 1;
-            splash1.handleDying();
+            setTimeout(() => {
+                penguin.y = 700;
+            }, 1000);
+          
 
         }
-
     }
-
-
-
 
     oniceberg() {
-        let icebergs = [iceberg1, iceberg2, iceberg3];
-        let character = new Image();
-        character.src = "assets/penguin.png";
-        for (let i = 0; i < icebergs.length; i++)
-            if (icebergs[i].onIceBerg === true) {
-                ctx.drawImage(character, 0, 5, 35, 37, (icebergs[i].icebergX + 100), (icebergs[i].icebergY - 10), 35, 38);
-                if(savePenguins === save){
-                    savePenguins += 1;
+            let icebergs = [iceberg1, iceberg2, iceberg3];
+            let character = new Image();
+            character.src = "assets/penguin.png";
+            for (let i = 0; i < icebergs.length; i++)
+                if (icebergs[i].onIceBerg === true) {
+                    ctx.drawImage(character, 0, 5, 35, 37, (icebergs[i].icebergX + 100), (icebergs[i].icebergY - 10), 35, 38);
+                    if(savePenguins === save){
+                        savePenguins += 1;
+                    }
                 }
+        }   
+
+
+
+        winner(){
+            if (iceberg1.onIceBerg && iceberg2.onIceBerg && iceberg3.onIceBerg){
+                ctx.fillstyle = "white";
+                ctx.font = "30px Arial";
+                ctx.fillText("You Won! ", (canvas.width / 2) - 60, 200)
+                winner = true;
+                play = false;
+                setTimeout(() => {
+                    document.getElementById("gameOver").classList.remove("off");
+                    document.getElementById("gameOver").classList.add("on");
+                    document.getElementById("game").classList.remove("on");
+                    document.getElementById("game").classList.add("off");
+                }, 2000);
             }
-    }   
-
-
-
-    winner(){
-        if (iceberg1.onIceBerg && iceberg2.onIceBerg && iceberg3.onIceBerg){
-            ctx.fillstyle = "white";
-            ctx.font = "30px Arial";
-            ctx.fillText("You Won! ", (canvas.width / 2) - 60, 200)
-            winner = true;
-            play = false;
-            setTimeout(() => {
-                document.getElementById("gameOver").classList.remove("off");
-                document.getElementById("gameOver").classList.add("on");
-                document.getElementById("game").classList.remove("on");
-                document.getElementById("game").classList.add("off");
-            }, 2000);
         }
+
+
     }
-
-
-}

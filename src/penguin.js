@@ -33,15 +33,15 @@ class Penguin{
 
 
     drawPenguin(ctx) {
-        ctx.drawImage(this.img, this.srcX, this.srcY, this.width, this.height, this.x, this.y, 35, 38)
-        this.movePenguin()
+        ctx.drawImage(this.img, this.srcX, this.srcY, this.width, this.height, this.x, this.y, 35, 38);
+        this.movePenguin();
     }
     drawPenguin1(ctx) {
-        ctx.drawImage(this.img, this.srcX, this.srcY, this.width, this.height, this.x, this.y, 35, 38)
+        ctx.drawImage(this.img, this.srcX, this.srcY, this.width, this.height, this.x, this.y, 35, 38);
     }
    
     drawSnow() {
-        ctx.drawImage(snow, 150, 75 ,300, 200, 0, 600, 800, 200)
+        ctx.drawImage(snow, 150, 75 ,300, 200, 0, 600, 800, 200);
     }
 
      movePenguin() {

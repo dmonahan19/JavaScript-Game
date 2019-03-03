@@ -3,6 +3,7 @@
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 let music = document.getElementById('music');
+let splashSound = document.getElementById('splash');
 let sound = document.getElementById('sound');
 let playMusic = true;
 
@@ -102,19 +103,6 @@ window.addEventListener("keyup", e => {
     }
 });
 
-
-if (currentlyPressedKeys.m) {
-    playBgm = false;
-    playSound = false;
-    soundBtn.style.display = 'none';
-    muteBtn.style.display = 'inline';
-}
-if (currentlyPressedKeys.n) {
-    playBgm = true;
-    playSound = true;
-    soundBtn.style.display = 'inline';
-    muteBtn.style.display = 'none';
-}
 
 
 
