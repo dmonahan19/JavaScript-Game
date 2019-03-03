@@ -16,7 +16,8 @@ let polarBear2 = new Object(polarBear, 0, 10, 200, 95, 400, 576, 150, 30, -2.5);
 let whale1 = new Whale(whale,[95, 98, 97, 95, 96, 97], [11, 100, 201, 293, 385, 481], 72, 20, 400, 532, 90, 30, 3, 10);
 let whale2 = new Whale(whale,[95, 98, 97, 95, 96, 97], [11, 100, 201, 293, 385, 481], 72, 20, 100, 532, 90, 30, 3, 10);
 
-let splash1 = new Splash(splash, [40, 34, 15, 15], [53, 54, 60, 12], 72, 20, 90, 20, 0, 1);
+// let splash1 = new Splash(splash, [40, 34, 15, 15], [53, 54, 60, 12], 72, 20, 90, 20, 0, 1);
+let splash1 = new Splash(splash, [34, 26, 29, 101, 109, 119, 181, 182], [17, 81, 143, 9, 72, 134, 20, 90],43,40,43,40, 40);
 
 let humpbackwhale1 = new Object(humpbackwhale, 0, 10, 300, 150, 0, 498, 150, 30, -2);
 let humpbackwhale2 = new Object(humpbackwhale, 0, 10, 300, 150, 350, 498, 150, 30, -2);

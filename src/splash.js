@@ -1,6 +1,6 @@
 let pos;
 class Splash {
-    constructor(img, srcY, srcX, width, height, animalWidth, animalHeight, movementSpeed, frameTicks = 4) {
+    constructor(img, srcY, srcX, width, height, animalWidth, animalHeight, frameTicks) {
         this.img = img;
         this.posX = penguin.x;
         this.posY = penguin.y;

@@ -128,6 +128,7 @@ class Obstacle{
             pos = penguin.y;
             penguin.y = 800;
             splash1.drawSplash();
+            splash1.drawSplash();
             splashSound.play();
             livesLost += 1;
             setTimeout(() => {
