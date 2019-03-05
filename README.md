@@ -38,6 +38,8 @@ There are three icebergs the penguin has to land on to win the game. When the pe
 
 Sprite animation was achieved by having an arrays of values with sprite dimensions taken from a sprite sheet. Each time the game loop completes a cycle, all the whale class added a tick counter. The sprite changes to the next frame when the tick counter reaches a certain value, which is defined as frame animation speed in the constructor of a the Whale class.
 
+<img src='http://i64.tinypic.com/2nvrpdc.png>
+
 
 
 
