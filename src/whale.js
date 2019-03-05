@@ -18,7 +18,8 @@ class Whale {
     }
 
     drawWhale() {
-        ctx.drawImage(this.img, this.srcX[this.frameIndex], this.srcY[this.frameIndex], this.width, this.height, this.posX, this.posY, this.animalWidth, this.animalHeight);
+        ctx.drawImage(this.img, this.srcX[this.frameIndex], this.srcY[this.frameIndex],
+             this.width, this.height, this.posX, this.posY, this.animalWidth, this.animalHeight);
         this.posX += this.movementSpeed;
         this.tickCount += 1;
         if (this.tickCount === this.frameTicks) {
@@ -31,7 +32,6 @@ class Whale {
             }
             this.posX = -100;
         }
-
     }
 
 }
