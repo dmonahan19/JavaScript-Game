@@ -4,8 +4,7 @@ let savePenguins = 0;
 class Obstacle{
     
     float() {
-
-        if (dolphin1.posX <= penguin.x + penguin.width &&
+    if (dolphin1.posX <= penguin.x + penguin.width &&
             dolphin1.posX + dolphin1.animalWidth >= penguin.x &&
             dolphin1.posY + dolphin1.animalHeight >= penguin.y &&
             dolphin1.posY <= penguin.y + penguin.height) {
