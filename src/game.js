@@ -25,12 +25,7 @@ class Game{
             ctx.font = "72px Arial";
             ctx.fillText("GAME OVER", (canvas.width / 2) - 200 , 250);
             setTimeout(() => {
-                document.getElementById("gameOver").classList.remove("off");
-                document.getElementById("gameOver").classList.add("on");
-                document.getElementById("game").classList.remove("on");
-                document.getElementById("game").classList.add("off");
-                document.getElementById("foot").classList.remove("footer");
-                document.getElementById("foot").classList.add("footer1");
+                location.reload(); 
             }, 2000);
         }
     }
